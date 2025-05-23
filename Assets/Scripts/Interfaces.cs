@@ -1,3 +1,5 @@
+using Unity.VisualScripting;
+
 public interface IEntity
 {
     int Health { get; set; }
@@ -7,5 +9,7 @@ public interface IEntity
 
 public interface IAttack
 {
+    Entity CurrentEntity { get; set; }
+    int AttackAmount { get; set; }
     void Attack();
 }

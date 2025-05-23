@@ -15,6 +15,10 @@ public class Entity : MonoBehaviour, IEntity
             {
                 _health = value;
             }
+            else
+            {
+                Debug.Log("Health needs to be set at a number greater than 0");
+            }
         }
     }
 
