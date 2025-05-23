@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
 {
+    // Uses the new unity input system
     public InputActionAsset InputActions;
     private InputAction movementInput;
     private Vector2 direction;
@@ -25,7 +26,9 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+        // Gets the direction of the input from the WASD keys
         direction = movementInput.ReadValue<Vector2>();
+        // Changes the current position of the player
         transform.position = new Vector3(transform.position.x + direction.x * moveSpeed * Time.deltaTime,
                                          transform.position.y + direction.y * moveSpeed * Time.deltaTime,
                                          0);
