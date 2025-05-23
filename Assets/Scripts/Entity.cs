@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class Player : MonoBehaviour, IEntity
+public class Entity : MonoBehaviour, IEntity
 {
-    private int _health = 0;
+    [SerializeField] private int _health = 2;
     public int Health
     {
         get

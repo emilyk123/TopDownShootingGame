@@ -4,3 +4,8 @@ public interface IEntity
     void Damaged(int damage_amount);
     void Die();
 }
+
+public interface IAttack
+{
+    void Attack();
+}

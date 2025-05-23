@@ -6,7 +6,6 @@ public class PlayerMovement : MonoBehaviour
     public InputActionAsset InputActions;
     private InputAction movementInput;
     private Vector2 direction;
-    private Rigidbody2D rb;
     private float moveSpeed = 5f;
 
     private void OnEnable()
@@ -22,7 +21,6 @@ public class PlayerMovement : MonoBehaviour
     private void Awake()
     {
         movementInput = InputSystem.actions.FindAction("Move");
-        rb = GetComponent<Rigidbody2D>();
     }
 
     void Update()
