@@ -11,7 +11,7 @@ public class Entity : MonoBehaviour, IEntity
         }
         set
         {
-            if (value > 0)
+            if (value >= 0)
             {
                 _health = value;
             }
@@ -20,11 +20,15 @@ public class Entity : MonoBehaviour, IEntity
 
     public void Damaged(int damage_amount)
     {
-        return;
+        Health -= damage_amount;
     }
 
-    public void Die()
+    public void CheckIsAlive()
     {
-        return;
+        if (Health == 0)
+        {
+            Debug.Log("Died");
+            Destroy(gameObject);
+        }
     }
 }
