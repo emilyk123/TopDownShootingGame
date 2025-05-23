@@ -18,17 +18,7 @@ public class Player : MonoBehaviour, IEntity
         }
     }
 
-    public void Attack(int attack_amount)
-    {
-        return;
-    }
-
     public void Damaged(int damage_amount)
-    {
-        return;
-    }
-
-    public void Move()
     {
         return;
     }
