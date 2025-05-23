@@ -4,8 +4,3 @@ public interface IEntity
     void Damaged(int damage_amount);
     void Die();
 }
-
-public interface IMovement
-{
-    void Move();
-}
