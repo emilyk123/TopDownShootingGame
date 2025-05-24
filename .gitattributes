@@ -8,3 +8,4 @@
 *.txt eol=lf
 *.md eol=lf
 *.scenetemplate eol=lf
+*.prefab eol=lf

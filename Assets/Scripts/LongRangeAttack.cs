@@ -4,6 +4,7 @@ public class LongRangeAttack : MonoBehaviour, IAttack
 {
     [SerializeField] private Entity _player;
     [SerializeField] private int _attack_amount = 1;
+    [SerializeField] private GameObject bullet;
     public Entity CurrentEntity { get; set; }
     public float timer = 0f;
     public float delay = 0.5f;
@@ -29,7 +30,7 @@ public class LongRangeAttack : MonoBehaviour, IAttack
 
     public void Attack()
     {
-        Debug.Log("Attack");
+        Instantiate(bullet, transform);
     }
 
     void Update()
