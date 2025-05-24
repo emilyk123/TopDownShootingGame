@@ -12,7 +12,7 @@ public class LongRangeAttack : BaseAttack
     public override void Attack()
     {
         // Spawn in the bullet in the direction of this game object
-        Instantiate(bullet, transform);
+        Instantiate(bullet, transform.position, transform.rotation);
     }
 
     // Rotate this game object to face toward the player
