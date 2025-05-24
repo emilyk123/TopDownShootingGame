@@ -1,3 +1,4 @@
+using Unity.Mathematics;
 using UnityEngine;
 
 public class LongRangeAttack : MonoBehaviour, IAttack
@@ -7,7 +8,7 @@ public class LongRangeAttack : MonoBehaviour, IAttack
     [SerializeField] private GameObject bullet;
     public Entity CurrentEntity { get; set; }
     public float timer = 0f;
-    public float delay = 0.5f;
+    public float delay = 2f;
     public int AttackAmount
     {
         get
@@ -30,7 +31,7 @@ public class LongRangeAttack : MonoBehaviour, IAttack
 
     public void Attack()
     {
-        Instantiate(bullet, transform);
+        Instantiate(bullet, transform.position, quaternion.identity);
     }
 
     void Update()
