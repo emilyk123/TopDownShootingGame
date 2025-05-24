@@ -1,50 +1,32 @@
-using Unity.Mathematics;
 using UnityEngine;
 
-public class LongRangeAttack : MonoBehaviour, IAttack
+public class LongRangeAttack : BaseAttack
 {
-    [SerializeField] private Entity _player;
-    [SerializeField] private int _attack_amount = 1;
     [SerializeField] private GameObject bullet;
+    // Will store the direction the player is in relative to this game object
     private Vector3 direction = Vector3.zero;
-    public Entity CurrentEntity { get; set; }
     public float timer = 0f;
+    // Number of seconds the attack will be delayed by
     public float delay = 2f;
-    public int AttackAmount
-    {
-        get
-        {
-            return _attack_amount;
-        }
-        set
-        {
-            // Makes sure attack amount is above zero or prints out that it needs to be above zero
-            if (value > 0)
-            {
-                _attack_amount = value;
-            }
-            else
-            {
-                Debug.Log("Attack amount needs to be greater than 0");
-            }
-        }
-    }
 
-    public void Attack()
+    public override void Attack()
     {
+        // Spawn in the bullet in the direction of this game object
         Instantiate(bullet, transform);
     }
 
+    // Rotate this game object to face toward the player
     private void Rotation()
     {
-        direction = _player.transform.position - transform.position;
+        direction = CurrentEntity.transform.position - transform.position;
         direction.Normalize();
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.Euler(Vector3.forward * (angle-90f));
+        transform.rotation = Quaternion.Euler(Vector3.forward * (angle - 90f));
     }
 
     void Update()
     {
+        // Delay how often the attack can happen
         timer += Time.deltaTime;
         if (timer > delay)
         {
@@ -52,6 +34,7 @@ public class LongRangeAttack : MonoBehaviour, IAttack
             Attack();
         }
 
+        // Update the rotation of this game object to face the player
         Rotation();
     }
 

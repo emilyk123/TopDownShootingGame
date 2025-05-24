@@ -645,8 +645,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f03e2376e206d34288df632bb00f416, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 0}
-  _attack_amount: 1
+  _attackAmount: 1
+  _currentEntity: {fileID: 1003996953}
 --- !u!61 &1088780025
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -807,8 +807,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67b705fad9f4da4428c4aad4c471dc29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _player: {fileID: 1003996953}
-  _attack_amount: 1
+  _attackAmount: 1
+  _currentEntity: {fileID: 1003996953}
   bullet: {fileID: 4133148268162740393, guid: 25e5a7bc78a6e8946a222f819bc7f8bd, type: 3}
   timer: 0
   delay: 1
